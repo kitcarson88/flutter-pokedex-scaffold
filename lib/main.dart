@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:pokedex_scaffold/app/app.dart';
+import 'package:pokedex_scaffold/bootstrap.dart';
 
 void main() {
-  runApp(const App());
+  bootstrap(() => const App());
 }
