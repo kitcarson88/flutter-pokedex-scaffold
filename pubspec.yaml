@@ -10,6 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   auto_route: 9.2.2
+  fancy_bottom_tab_bar:    
+    git:
+      url: https://github.com/kitcarson88/flutter-fancy-bottom-tab-bar.git
 
 dev_dependencies:
   flutter_test:
