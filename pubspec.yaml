@@ -10,7 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   auto_route: 9.2.2
+  flutter_screenutil: 5.9.3
   flutter_svg: 2.0.10+1
+  responsive_builder: 0.7.1
   fancy_bottom_tab_bar:    
     git:
       url: https://github.com/kitcarson88/flutter-fancy-bottom-tab-bar.git
