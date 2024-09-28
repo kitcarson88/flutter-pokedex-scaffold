@@ -1,54 +1,38 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pokedex_scaffold/ui/styles/assets.gen.dart';
-import 'package:pokedex_scaffold/ui/styles/colors.gen.dart';
-import 'package:pokedex_scaffold/ui/styles/theme.dart';
-import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_appbar.dart';
+import 'package:pokedex_scaffold/app/router.dart';
+import 'package:pokedex_scaffold/core/base/base_view.dart';
+import 'package:pokedex_scaffold/utils/extensions/build_context.dart';
+import 'package:pokedex_scaffold/utils/extensions/string.dart';
 
 @RoutePage()
-class HomeView extends StatelessWidget {
-  const HomeView({
+class HomeView extends BaseStatelessView {
+  HomeView({
     super.key,
-  });
+  }) : super(
+          baseViewData: BaseViewData(
+            appBarConfiguration: AppBarData(
+              titleBuilder: (context) => context.localization.pokedex.capitalize(),
+            ),
+          ),
+        );
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: PokedexScaffoldAppBar(
-          backgroundColor: Colors.transparent,
-          titleWidget: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Assets.icons.pokeball.svg(width: 20.w),
-              Padding(
-                padding: EdgeInsetsDirectional.only(start: 5.w),
-                child: Stack(
-                  children: [
-                    Text(
-                      'Pokedex',
-                      style: AppTheme.s26w700h20cPrimary(context).copyWith(
-                        foreground: Paint()
-                          ..style = PaintingStyle.stroke
-                          ..strokeWidth = 4
-                          ..color = AppColors.tertiary,
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                    ),
-                    Text(
-                      'Pokedex',
-                      style: AppTheme.s26w700h20cPrimary(context),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                    ),
-                  ],
-                ),
+  Widget body(BuildContext context) => Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text('Home view'),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: TextButton(
+                onPressed: () {
+                  AutoRouter.of(context).push(const DetailRoute());
+                },
+                child: const Text('Press to go to child view'),
               ),
-            ],
-          ),
-        ),
-        body: const Center(
-          child: Text('Home view'),
+            ),
+          ],
         ),
       );
 }

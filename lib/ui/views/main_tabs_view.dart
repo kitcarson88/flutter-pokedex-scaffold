@@ -9,7 +9,7 @@ class MainTabsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AutoTabsRouter(
-        routes: const [
+        routes: [
           HomeRoute(),
           FavoritesRoute(),
           UseCasesRoutingRoute(),

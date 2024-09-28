@@ -12,5 +12,6 @@
     "home": "home",
     "favorites": "favorites",
     "useCases": "use cases",
-    "settings": "settings"
+    "settings": "settings",
+    "pokedex": "pokedex"
 }
