@@ -59,6 +59,32 @@ class F {
     }
   }
 
+  static String get baseUrl {
+    switch (appFlavor) {
+      case Flavor.dev:
+        return '';
+      case Flavor.qa:
+        return '';
+      case Flavor.prod:
+        return '';
+      default:
+        return '';
+    }
+  }
+
+  static String get baseVersion {
+    switch (appFlavor) {
+      case Flavor.dev:
+        return '';
+      case Flavor.qa:
+        return '';
+      case Flavor.prod:
+        return '';
+      default:
+        return '';
+    }
+  }
+
   static bool isDev() => appFlavor! == Flavor.dev;
   static bool isTest() => appFlavor! == Flavor.qa;
   static bool isProd() => appFlavor! == Flavor.prod;
