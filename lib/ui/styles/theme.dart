@@ -106,4 +106,6 @@ class AppTheme {
   //       mobileLarge: const EdgeInsets.symmetric(horizontal: 20.0),
   //       mobileExtraLarge: const EdgeInsets.symmetric(horizontal: 24.0),
   //     );
+
+  static final bottomBarHeight = 70.h;
 }
