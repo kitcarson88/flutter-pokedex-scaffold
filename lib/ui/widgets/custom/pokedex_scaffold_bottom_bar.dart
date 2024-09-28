@@ -164,6 +164,19 @@ class PokedexScaffoldBottomBar extends FancyBottomTabBar {
                   style: AppTheme.s12w600h30cIosDark, overflow: TextOverflow.ellipsis),
             ),
           ],
+          wave: Assets.icons.wave.svg(
+            colorFilter: const ColorFilter.mode(
+              AppColors.secondary,
+              BlendMode.srcIn,
+            ),
+          ),
+          darkWave: Assets.icons.wave.svg(
+            colorFilter: const ColorFilter.mode(
+              AppColors.darkSecondary,
+              BlendMode.srcIn,
+            ),
+          ),
+          wavePositioning: 7,
           initialSelectedIndex: 0,
           onItemTap: onItemTap,
         );
