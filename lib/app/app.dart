@@ -24,6 +24,10 @@ class App extends StatelessWidget {
       routerDelegate: AutoRouterDelegate(appRouter),
       routeInformationParser: appRouter.defaultRouteParser(),
       routeInformationProvider: AutoRouteInformationProvider(),
+      debugShowCheckedModeBanner: true,
+      debugShowMaterialGrid: false,
+      showPerformanceOverlay: false,
+      showSemanticsDebugger: false,
     );
   }
 }
