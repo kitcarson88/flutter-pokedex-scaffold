@@ -16,7 +16,7 @@ $FLUTTER_CMD --version
 $FLUTTER_CMD pub get
 
 dart run build_runner build --delete-conflicting-outputs
-# $FLUTTER_CMD gen-l10n
+$FLUTTER_CMD gen-l10n
 
 # cd ios
 # $FLUTTER_CMD_ON_BACK_DIR precache --ios
