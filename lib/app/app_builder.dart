@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:loader_overlay/loader_overlay.dart';
 import 'package:logging/logging.dart';
+import 'package:pokedex_scaffold/ui/styles/theme.dart';
+import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_circular_progress_indicator.dart';
 
 Widget appBuilder(BuildContext context, Widget? child) {
   ScreenUtil.init(
@@ -61,5 +64,15 @@ class _AppBuilderState extends State<AppBuilder> with WidgetsBindingObserver {
   }
 
   @override
-  Widget build(BuildContext context) => widget.child;
+  Widget build(BuildContext context) => LoaderOverlay(
+        duration: const Duration(milliseconds: 250),
+        reverseDuration: const Duration(milliseconds: 250),
+        closeOnBackButton: false,
+        disableBackButton: true,
+        overlayColor: AppTheme.l44000000d44AAAAAA(context),
+        overlayWidgetBuilder: (_) => Center(
+          child: PokedexScaffoldCircularProgressIndicator(),
+        ),
+        child: widget.child,
+      );
 }

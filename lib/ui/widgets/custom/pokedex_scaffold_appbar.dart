@@ -22,6 +22,7 @@ class PokedexScaffoldAppBar extends AppBar {
     this.isModal = false,
     super.toolbarHeight,
     super.backgroundColor,
+    // super.systemOverlayStyle = SystemUiOverlayStyle.light,
     this.dividerColor,
     this.leadingButtonIconColor,
     this.darkLeadingButtonIconColor,

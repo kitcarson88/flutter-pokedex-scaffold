@@ -82,6 +82,24 @@ class AppTheme {
         height: 1.25,
       );
 
+  static TextStyle s16w400h20cWhite(BuildContext context) => defaultFontTextStyle(context).copyWith(
+        height: 1.25,
+        color: Colors.white,
+      );
+
+  static TextStyle s16w600h20cWhite(BuildContext context) => defaultFontTextStyle(context).copyWith(
+        fontWeight: FontWeight.w600,
+        height: 1.25,
+        color: Colors.white,
+      );
+
+  static TextStyle s18w700h20l120507dWhite(BuildContext context) =>
+      defaultFontTextStyle(context).copyWith(
+        fontSize: 18.sp,
+        fontWeight: FontWeight.w700,
+        height: 1.11,
+      );
+
   static TextStyle s20w700h20cPrimary(BuildContext context) =>
       defaultFontTextStyle(context).copyWith(
         fontSize: 20.sp,
@@ -152,4 +170,37 @@ class AppTheme {
   static final defaultTopPadding = const EdgeInsets.only(top: 25).h;
 
   static final mainTabsWaveViewBottomPadding = 20.h;
+
+  static final modalBarHeight = 44.h;
+
+  static final defaultButtonWidth = 220.w;
+
+  static final defaultButtonHeight = 56.h;
+
+  static final defaultIconSize = 24.w;
+
+  static final defaultBorderRadiusValue = 20.w;
+
+  static final defaultBorderRadius = const BorderRadius.all(
+    Radius.circular(20),
+  ).w;
+
+  static double topSafeAreaHeight(BuildContext context) => View.of(context).padding.top;
+
+  static double bottomSafeAreaHeight(BuildContext context) {
+    var bottomSafeAreaPadding = MediaQuery.of(context).padding.bottom;
+    return bottomSafeAreaPadding > 0 ? bottomSafeAreaPadding : 20.0;
+  }
+
+  static double bottomTabsHeightWithSafeArea(BuildContext context) =>
+      bottomSafeAreaHeight(context) + bottomBarHeight + mainTabsWaveViewBottomPadding;
+
+  static EdgeInsets bottomTabsPaddingWithSafeArea(BuildContext context) =>
+      EdgeInsets.only(bottom: bottomTabsHeightWithSafeArea(context));
+
+  static EdgeInsets sidePaddingWithBottomSafeArea(BuildContext context) =>
+      sidePadding.copyWith(bottom: bottomSafeAreaHeight(context));
+
+  static EdgeInsets sidePaddingWithBottomBottomTabsPaddingAndSafeArea(BuildContext context) =>
+      sidePadding.copyWith(bottom: bottomTabsHeightWithSafeArea(context));
 }

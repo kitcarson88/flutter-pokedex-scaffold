@@ -27,6 +27,7 @@
     "retry": "retry",
     "youAreOffline": "you are currently offline",
     "youAreOnlineAgain": "you are online again",
+    "dismiss": "dismiss",
     "home": "home",
     "favorites": "favorites",
     "useCases": "use cases",

@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex_scaffold/configs/singleton_locator.dart';
+import 'package:pokedex_scaffold/core/services/nested_routing_key_service.dart';
 import 'package:pokedex_scaffold/ui/styles/assets.gen.dart';
 import 'package:pokedex_scaffold/ui/styles/theme.dart';
 import 'package:pokedex_scaffold/ui/widgets/common/haptic_cupertino_button.dart';
@@ -26,16 +28,16 @@ class PokedexScaffoldAppBarBackButton extends StatelessWidget {
             if (isModal) {
               Navigator.of(context).pop();
             } else {
-              // if (nestedRouterKey != null && nestedRouterKey!.isNotEmpty) {
-              //   var navigationKey =
-              //       locator<NestedRoutingKeyService>().getNavigationKey(nestedRouterKey!);
+              if (nestedRouterKey != null && nestedRouterKey!.isNotEmpty) {
+                var navigationKey =
+                    locator<NestedRoutingKeyService>().getNavigationKey(nestedRouterKey!);
 
-              //   if (navigationKey?.currentState?.controller != null) {
-              //     final router = navigationKey!.currentState!.controller;
-              //     router?.pop();
-              //     return;
-              //   }
-              // }
+                if (navigationKey?.currentState?.controller != null) {
+                  final router = navigationKey!.currentState!.controller;
+                  router?.maybePop();
+                  return;
+                }
+              }
 
               AutoRouter.of(context).maybePop();
             }

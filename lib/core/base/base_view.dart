@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex_scaffold/core/templates/child_template.dart';
 import 'package:pokedex_scaffold/core/templates/main_template.dart';
+import 'package:pokedex_scaffold/core/templates/modal_template.dart';
 import 'package:pokedex_scaffold/ui/styles/colors.gen.dart';
 import 'package:pokedex_scaffold/utils/typedefs/nullable_widget_builder.dart';
 
@@ -35,11 +36,15 @@ class AppBarData {
 class BaseViewData {
   final AppBarData appBarConfiguration;
   final bool isChildPage;
+  final bool isModalPage;
+  final bool isModalNavigable;
   final Color? backgroundColor;
   final Color? darkBackgroundColor;
 
   const BaseViewData({
     this.isChildPage = false,
+    this.isModalPage = false,
+    this.isModalNavigable = false,
     this.appBarConfiguration = const AppBarData(),
     this.backgroundColor,
     this.darkBackgroundColor,
@@ -59,7 +64,9 @@ class _BaseViewBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (data.isChildPage) {
+    if (data.isModalPage) {
+      return ModalTemplate(data, builder, appBarActionButtonBuilder);
+    } else if (data.isChildPage) {
       return ChildTemplate(data, builder, appBarActionButtonBuilder);
     } else {
       return MainTemplate(data, builder, appBarActionButtonBuilder);
