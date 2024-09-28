@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pokedex_scaffold/ui/styles/assets.gen.dart';
 import 'package:pokedex_scaffold/ui/styles/colors.gen.dart';
 import 'package:pokedex_scaffold/ui/styles/theme.dart';
+import 'package:pokedex_scaffold/ui/widgets/common/flexible_text.dart';
+import 'package:pokedex_scaffold/utils/extensions/build_context.dart';
 
 class PokedexScaffoldBottomBar extends FancyBottomTabBar {
   static final _iconsSize = 24.h;
@@ -125,6 +127,41 @@ class PokedexScaffoldBottomBar extends FancyBottomTabBar {
               width: _iconsSize,
               height: _iconsSize,
               colorFilter: const ColorFilter.mode(AppColors.darkSecondary, BlendMode.srcIn),
+            ),
+          ],
+          labels: [
+            Builder(
+                builder: (context) => FlexibleText(context.localization.home.toUpperCase(),
+                    style: AppTheme.s12w600h30cWhite, overflow: TextOverflow.ellipsis)),
+            Builder(
+              builder: (context) => FlexibleText(context.localization.favorites.toUpperCase(),
+                  style: AppTheme.s12w600h30cWhite, overflow: TextOverflow.ellipsis),
+            ),
+            Builder(
+              builder: (context) => FlexibleText(context.localization.useCases.toUpperCase(),
+                  style: AppTheme.s12w600h30cWhite, overflow: TextOverflow.ellipsis),
+            ),
+            Builder(
+              builder: (context) => FlexibleText(context.localization.settings.toUpperCase(),
+                  style: AppTheme.s12w600h30cWhite, overflow: TextOverflow.ellipsis),
+            ),
+          ],
+          darkLabels: [
+            Builder(
+              builder: (context) => FlexibleText(context.localization.home.toUpperCase(),
+                  style: AppTheme.s12w600h30cIosDark, overflow: TextOverflow.ellipsis),
+            ),
+            Builder(
+              builder: (context) => FlexibleText(context.localization.favorites.toUpperCase(),
+                  style: AppTheme.s12w600h30cIosDark, overflow: TextOverflow.ellipsis),
+            ),
+            Builder(
+              builder: (context) => FlexibleText(context.localization.useCases.toUpperCase(),
+                  style: AppTheme.s12w600h30cIosDark, overflow: TextOverflow.ellipsis),
+            ),
+            Builder(
+              builder: (context) => FlexibleText(context.localization.settings.toUpperCase(),
+                  style: AppTheme.s12w600h30cIosDark, overflow: TextOverflow.ellipsis),
             ),
           ],
           initialSelectedIndex: 0,

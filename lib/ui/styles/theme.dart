@@ -82,6 +82,28 @@ class AppTheme {
         height: 1.25,
       );
 
+  static final TextStyle s12w600h30cWhite = TextStyle(
+    fontFamily: _kDefaultFontFamily,
+    fontSize: 12.sp < 12 ? 12 : 12.sp,
+    fontWeight: FontWeight.w600,
+    height: 2.5,
+    color: Colors.white,
+    decoration: TextDecoration.none,
+    wordSpacing: 0.1,
+    letterSpacing: 0.1,
+  );
+
+  static final TextStyle s12w600h30cIosDark = TextStyle(
+    fontFamily: _kDefaultFontFamily,
+    fontSize: 12.sp < 12 ? 12 : 12.sp,
+    fontWeight: FontWeight.w600,
+    height: 2.5,
+    color: AppColors.iosDark,
+    decoration: TextDecoration.none,
+    wordSpacing: 0.1,
+    letterSpacing: 0.1,
+  );
+
   // Html text style
   // static Style defaultHtmlStyle(BuildContext context) => Style(
   //       fontSize: FontSize.rem(1.14),

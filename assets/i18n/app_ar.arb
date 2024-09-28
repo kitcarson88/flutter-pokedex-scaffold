@@ -8,5 +8,9 @@
     "no": "no",
     "retry": "retry",
     "youAreOffline": "you are currently offline",
-    "youAreOnlineAgain": "you are online again"
+    "youAreOnlineAgain": "you are online again",
+    "home": "home",
+    "favorites": "favorites",
+    "useCases": "use cases",
+    "settings": "settings"
 }
