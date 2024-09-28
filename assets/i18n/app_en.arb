@@ -1,0 +1,30 @@
+{
+    "connectionError": "A network error occurs. Check device connection and retry",
+    "serviceError": "An error has occurred in the retrieval of {dataName} informations",
+    "@serviceError": {
+        "description": "A service error with the name of a data information as parameter",
+        "placeholders": {
+            "dataName": {
+                "type": "String",
+                "example": "example"
+            }
+        }
+    },
+    "sessionError": "A session error has occurred. Please log in again",
+    "genericError": "An error has occured",
+    "pleaseRetryError": "An error has occured. Please retry",
+    "noDataFound": "No {dataName} found",
+    "@noDataFound": {
+        "description": "A no data found error with the name of a data information as parameter",
+        "placeholders": {
+            "dataName": {
+                "type": "String",
+                "example": "example"
+            }
+        }
+    },
+    "no": "no",
+    "retry": "retry",
+    "youAreOffline": "you are currently offline",
+    "youAreOnlineAgain": "you are online again"
+}

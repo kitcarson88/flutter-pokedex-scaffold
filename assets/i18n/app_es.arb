@@ -1,0 +1,42 @@
+{
+    "connectionError": "Si è verificato un problema di rete. Controllare la connessione del dispositivo e riprovare",
+    "serviceError": "Si è verificato un errore nel recupero delle informazioni {article} {dataName}",
+    "@serviceError": {
+        "placeholders": {
+            "article": {
+                "type": "String"
+            },
+            "dataName": {
+                "type": "String"
+            }
+        }
+    },
+    "sessionError": "Si è verificato un errore di sessione. Si prega di effettuare nuovamente l'accesso",
+    "genericError": "Si è verificato un errore",
+    "pleaseRetryError": "Si è verificato un errore. Si prega di riprovare",
+    "noDataFound": "{gender, select, male{{no} {dataName} trovato} female{{no} {dataName} trovata} other{{no} {dataName} trovato}}",
+    "@noDataFound": {
+        "placeholders": {
+            "gender": {
+                "type": "String"
+            },
+            "no": {
+                "type": "String"
+            },
+            "dataName": {
+                "type": "String"
+            }
+        }
+    },
+    "no": "{gender, select, male{nessuno} female{nessuna} other{nessun}}",
+    "@no": {
+        "placeholders": {
+            "gender": {
+                "type": "String"
+            }
+        }
+    },
+    "retry": "riprova",
+    "youAreOffline": "al momento sei offline",
+    "youAreOnlineAgain": "sei di nuovo online"
+}

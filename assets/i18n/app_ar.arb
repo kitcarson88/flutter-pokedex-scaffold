@@ -1,0 +1,12 @@
+{
+    "connectionError": "A network error occurs. Check device connection and retry",
+    "serviceError": "An error has occurred in the retrieval of {dataName} informations",
+    "sessionError": "A session error has occurred. Please log in again",
+    "genericError": "An error has occured",
+    "pleaseRetryError": "An error has occured. Please retry",
+    "noDataFound": "No {dataName} found",
+    "no": "no",
+    "retry": "retry",
+    "youAreOffline": "you are currently offline",
+    "youAreOnlineAgain": "you are online again"
+}
