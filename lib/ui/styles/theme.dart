@@ -82,6 +82,18 @@ class AppTheme {
         height: 1.25,
       );
 
+  static TextStyle s20w700h20cPrimary(BuildContext context) =>
+      defaultFontTextStyle(context).copyWith(
+        fontSize: 20.sp,
+        fontWeight: FontWeight.w700,
+        height: 1,
+        color: primary(context),
+      );
+
+  static TextStyle s26w700h20cPrimary(BuildContext context) => s20w700h20cPrimary(context).copyWith(
+        fontSize: 26.sp,
+      );
+
   static final TextStyle s12w600h30cWhite = TextStyle(
     fontFamily: _kDefaultFontFamily,
     fontSize: 12.sp < 12 ? 12 : 12.sp,
@@ -129,5 +141,15 @@ class AppTheme {
   //       mobileExtraLarge: const EdgeInsets.symmetric(horizontal: 24.0),
   //     );
 
-  static final bottomBarHeight = 70.h;
+  static final appBarHeight = 56.h;
+
+  static final appBarLeadingButtonIconSize = 26.h;
+
+  static const bottomBarHeight = 70.0;
+
+  static final sidePadding = const EdgeInsets.symmetric(horizontal: 24).w;
+
+  static final defaultTopPadding = const EdgeInsets.only(top: 25).h;
+
+  static final mainTabsWaveViewBottomPadding = 20.h;
 }
