@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pokedex_scaffold/app/app_builder.dart';
 import 'package:pokedex_scaffold/app/router.dart';
+import 'package:pokedex_scaffold/configs/flavors.dart';
 import 'package:pokedex_scaffold/ui/styles/theme.dart';
 
 class App extends StatelessWidget {
@@ -13,7 +14,7 @@ class App extends StatelessWidget {
     AppRouter appRouter = AppRouter();
 
     return MaterialApp.router(
-      title: 'Pokedex scaffold',
+      title: F.title,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: null,
