@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex_scaffold/configs/logger.dart';
 import 'package:pokedex_scaffold/configs/responsiveness_utils.dart';
+import 'package:pokedex_scaffold/configs/singleton_locator.dart';
 
 import 'configs/configure_nonweb.dart' if (dart.library.html) 'configs/configure_web.dart';
 
@@ -18,6 +19,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
       if (!kIsWeb) {
         await configureResponsivenessUtils();
       }
+      setupLocator();
       configureWeb();
       configureLogger();
 
