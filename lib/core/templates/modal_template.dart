@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:pokedex_scaffold/core/base/base_view.dart';
 import 'package:pokedex_scaffold/ui/styles/colors.gen.dart';
 import 'package:pokedex_scaffold/ui/styles/theme.dart';
@@ -6,7 +7,7 @@ import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_appbar.dart'
 import 'package:pokedex_scaffold/utils/extensions/build_context.dart';
 import 'package:pokedex_scaffold/utils/typedefs/nullable_widget_builder.dart';
 
-class ModalTemplate extends StatelessWidget {
+class ModalTemplate extends HookWidget {
   final BaseViewData data;
   final WidgetBuilder builder;
   final NullableWidgetBuilder appBarActionButtonBuilder;
