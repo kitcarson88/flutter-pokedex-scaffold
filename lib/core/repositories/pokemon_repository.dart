@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pokedex_scaffold/configs/flavors.dart';
 import 'package:pokedex_scaffold/constants/endpoints.dart' as endpoints;
