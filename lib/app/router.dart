@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex_scaffold/core/models/dto/pokemon_dto.dart';
 import 'package:pokedex_scaffold/ui/views/detail_view.dart';
 import 'package:pokedex_scaffold/ui/views/main_tabs_view.dart';
 import 'package:pokedex_scaffold/ui/views/tabs/favorites_view.dart';

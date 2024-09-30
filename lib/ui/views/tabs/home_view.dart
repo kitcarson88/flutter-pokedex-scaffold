@@ -97,7 +97,9 @@ class _DataFetchedContainer extends HookWidget {
               child: PokemonCard(
                 data: data[index],
                 onPressed: () {
-                  AutoRouter.of(context).push(const DetailRoute());
+                  AutoRouter.of(context).push(DetailRoute(
+                    data: data[index],
+                  ));
                 },
               ),
             ),

@@ -141,6 +141,15 @@ class AppTheme {
     letterSpacing: 0.1,
   );
 
+  static final s20w600h20cWhite = TextStyle(
+    fontFamily: _kDefaultFontFamily,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w600,
+    height: 1,
+    color: Colors.white,
+    decoration: TextDecoration.none,
+  );
+
   static final s20w700h20cBlack45 = TextStyle(
     fontFamily: _kDefaultFontFamily,
     fontSize: 20.sp,
@@ -153,6 +162,15 @@ class AppTheme {
   static final s40w600h40cWhite70 = TextStyle(
     fontFamily: _kDefaultFontFamily,
     fontSize: 40.sp,
+    fontWeight: FontWeight.w600,
+    height: 1,
+    color: Colors.white70,
+    decoration: TextDecoration.none,
+  );
+
+  static final s120w600h120cWhite70 = TextStyle(
+    fontFamily: _kDefaultFontFamily,
+    fontSize: 120.sp,
     fontWeight: FontWeight.w600,
     height: 1,
     color: Colors.white70,

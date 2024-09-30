@@ -45,5 +45,10 @@
     "useCases": "esempi",
     "settings": "impostazioni",
     "pokemon": "pokemon",
-    "pokedex": "pokedex"
+    "pokedex": "pokedex",
+    "pokemonDetail": "dettaglio pokemon",
+    "height": "altezza",
+    "weight": "peso",
+    "stats": "statistiche",
+    "curiosities": "curiosità"
 }
