@@ -15,5 +15,10 @@
     "useCases": "use cases",
     "settings": "settings",
     "pokemon": "pokemon",
-    "pokedex": "pokedex"
+    "pokedex": "pokedex",
+    "pokemonDetail": "pokemon detail",
+    "height": "height",
+    "weight": "weight",
+    "stats": "statistics",
+    "curiosities": "curiosities"
 }

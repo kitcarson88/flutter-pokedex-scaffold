@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:pokedex_scaffold/configs/flavors.dart';
 import 'package:pokedex_scaffold/constants/endpoints.dart' as endpoints;
 import 'package:pokedex_scaffold/core/models/dto/pagination_dto.dart';
+import 'package:pokedex_scaffold/core/models/dto/pokemon_detail_dto.dart';
 import 'package:pokedex_scaffold/core/models/dto/pokemon_dto.dart';
 import 'package:pokedex_scaffold/core/services/http/http_service.dart';
 import 'package:retrofit/retrofit.dart';
@@ -51,4 +52,10 @@ abstract class PokemonRepository {
       rethrow;
     }
   }
+
+  @GET(endpoints.pokemonDetail)
+  Future<PokemonDetailDTO> getPokemonDetail({
+    @Header('Accept-Language') String? language = 'en',
+    @Path('id') required String id,
+  });
 }
