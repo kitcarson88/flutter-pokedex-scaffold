@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooked_bloc/hooked_bloc.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:logging/logging.dart';
-import 'package:pokedex_scaffold/bloc/cubit/network_status_cubit.dart';
+import 'package:pokedex_scaffold/bloc/network_status/network_status_cubit.dart';
 import 'package:pokedex_scaffold/configs/flavors.dart';
 import 'package:pokedex_scaffold/configs/singleton_locator.dart';
 import 'package:pokedex_scaffold/core/services/toast_service.dart';

@@ -141,6 +141,24 @@ class AppTheme {
     letterSpacing: 0.1,
   );
 
+  static final s20w700h20cBlack45 = TextStyle(
+    fontFamily: _kDefaultFontFamily,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w700,
+    height: 1,
+    color: Colors.black54,
+    decoration: TextDecoration.none,
+  );
+
+  static final s40w600h40cWhite70 = TextStyle(
+    fontFamily: _kDefaultFontFamily,
+    fontSize: 40.sp,
+    fontWeight: FontWeight.w600,
+    height: 1,
+    color: Colors.white70,
+    decoration: TextDecoration.none,
+  );
+
   // Html text style
   // static Style defaultHtmlStyle(BuildContext context) => Style(
   //       fontSize: FontSize.rem(1.14),

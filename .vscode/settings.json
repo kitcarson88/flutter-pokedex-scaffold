@@ -27,6 +27,7 @@
         "**/*.g.dart": false,
         "**/*.gr.dart": false,
         "**/*.gen.dart": false,
+        "**/*.config.dart": false,
         "**/.dart_tool": false
     }
 }
