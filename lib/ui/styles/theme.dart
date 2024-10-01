@@ -69,6 +69,12 @@ class AppTheme {
   static Color l44000000d44AAAAAA(BuildContext context) =>
       context.isDarkMode() ? AppColors.c44AAAAAA : AppColors.c44000000;
 
+  static Color splashPrimary(BuildContext context) =>
+      context.isDarkMode() ? AppColors.splashDarkPrimary : AppColors.splashPrimary;
+
+  static Color splashSecondary(BuildContext context) =>
+      context.isDarkMode() ? AppColors.splashDarkSecondary : AppColors.splashSecondary;
+
   // Fonts
   static TextStyle defaultFontTextStyle(BuildContext context) => TextStyle(
         fontFamily: _kDefaultFontFamily,
@@ -145,6 +151,10 @@ class AppTheme {
 
   static TextStyle s26w700h20cPrimary(BuildContext context) => s20w700h20cPrimary(context).copyWith(
         fontSize: 26.sp,
+      );
+
+  static TextStyle s40w700h20cPrimary(BuildContext context) => s20w700h20cPrimary(context).copyWith(
+        fontSize: 40.sp,
       );
 
   static final TextStyle s12w600h30cWhite = TextStyle(

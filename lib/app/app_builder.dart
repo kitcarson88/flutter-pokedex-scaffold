@@ -8,8 +8,10 @@ import 'package:logging/logging.dart';
 import 'package:pokedex_scaffold/bloc/network_status/network_status_cubit.dart';
 import 'package:pokedex_scaffold/configs/flavors.dart';
 import 'package:pokedex_scaffold/configs/singleton_locator.dart';
+import 'package:pokedex_scaffold/constants/constants.dart' as constants;
 import 'package:pokedex_scaffold/core/services/toast_service.dart';
 import 'package:pokedex_scaffold/ui/styles/theme.dart';
+import 'package:pokedex_scaffold/ui/widgets/app_binded/splashcreen.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_circular_progress_indicator.dart';
 import 'package:pokedex_scaffold/utils/extensions/build_context.dart';
 import 'package:pokedex_scaffold/utils/extensions/string.dart';
@@ -40,7 +42,10 @@ class AppBuilder extends StatefulHookWidget {
 }
 
 class _AppBuilderState extends State<AppBuilder> with WidgetsBindingObserver {
+  static const _kSplashHideDelay = constants.splashDurationInMilliseconds + 700;
+
   final _logger = Logger('_AppBuilderState');
+  bool _splashVisible = !constants.deactivateSplashScreen;
 
   @override
   void initState() {
@@ -48,6 +53,10 @@ class _AppBuilderState extends State<AppBuilder> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
 
     locator<NetworkStatusCubit>().initConnectivityMonitoring();
+
+    Future.delayed(const Duration(milliseconds: _kSplashHideDelay)).then((_) {
+      _hideSplash();
+    });
   }
 
   @override
@@ -120,16 +129,27 @@ class _AppBuilderState extends State<AppBuilder> with WidgetsBindingObserver {
       );
     }
 
-    return LoaderOverlay(
-      duration: const Duration(milliseconds: 250),
-      reverseDuration: const Duration(milliseconds: 250),
-      closeOnBackButton: false,
-      disableBackButton: true,
-      overlayColor: AppTheme.l44000000d44AAAAAA(context),
-      overlayWidgetBuilder: (_) => Center(
-        child: PokedexScaffoldCircularProgressIndicator(),
-      ),
-      child: child,
+    return Stack(
+      children: [
+        LoaderOverlay(
+          duration: const Duration(milliseconds: 250),
+          reverseDuration: const Duration(milliseconds: 250),
+          closeOnBackButton: false,
+          disableBackButton: true,
+          overlayColor: AppTheme.l44000000d44AAAAAA(context),
+          overlayWidgetBuilder: (_) => Center(
+            child: PokedexScaffoldCircularProgressIndicator(),
+          ),
+          child: child,
+        ),
+        if (_splashVisible) const Splashcreen(),
+      ],
     );
+  }
+
+  void _hideSplash() {
+    setState(() {
+      _splashVisible = false;
+    });
   }
 }

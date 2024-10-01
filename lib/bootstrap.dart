@@ -34,10 +34,16 @@ class AppBlocObserver extends BlocObserver {
   }
 }
 
-Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
+Future<void> bootstrap(FutureOr<Widget> Function() builder, [Widget? filler]) async {
   await runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+
+      // Before initializing Flutter app configs may provide a delay in which programmative splash is not presented.
+      // A solid color app filler (of the same color as the system splash) is provided to bypass this problem
+      if (filler != null) {
+        runApp(filler);
+      }
 
       if (!kIsWeb) {
         await configureResponsivenessUtils();

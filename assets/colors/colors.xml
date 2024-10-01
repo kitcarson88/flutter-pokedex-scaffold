@@ -12,6 +12,12 @@
     <color name="c53E053">#53E053</color>
     <color name="c3EB33E">#3EB33E</color>
 
+    <color name="splashPrimary">#FF1C1C</color>
+    <color name="splashSecondary">#3465AF</color>
+
+    <color name="splashDarkPrimary">#B02E2E</color>
+    <color name="splashDarkSecondary">#13518E</color>
+
     <color name="bug">#92BC2C</color>
     <color name="dark">#595761</color>
     <color name="dragon">#0C69C8</color>
