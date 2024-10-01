@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hooked_bloc/hooked_bloc.dart';
 import 'package:pokedex_scaffold/bloc/detail/detail_cubit.dart';
+import 'package:pokedex_scaffold/bloc/favorites/favorites_cubit.dart';
 import 'package:pokedex_scaffold/configs/singleton_locator.dart';
 import 'package:pokedex_scaffold/constants/untranslated_strings.dart' as strings;
 import 'package:pokedex_scaffold/core/base/base_view.dart';
@@ -12,6 +14,7 @@ import 'package:pokedex_scaffold/core/repositories/pokemon_repository.dart';
 import 'package:pokedex_scaffold/ui/styles/theme.dart';
 import 'package:pokedex_scaffold/ui/widgets/app_binded/detail_background.dart';
 import 'package:pokedex_scaffold/ui/widgets/app_binded/detail_fake_modal.dart';
+import 'package:pokedex_scaffold/ui/widgets/app_binded/favorite_button.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_circular_progress_indicator.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_fake_modal.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_ws_bloc_container.dart';
@@ -109,6 +112,19 @@ class DetailView extends BaseStatelessView implements AutoRouteWrapper {
           ),
         ),
       ],
+    );
+  }
+
+  @override
+  Widget appBarActionButton(BuildContext context) {
+    final cubit = useBloc<FavoritesCubit>(closeOnDispose: false);
+    final state = useBlocBuilder(cubit);
+
+    return FavoriteButton(
+      active: state.favorites.contains(data),
+      onPressed: () {
+        locator<FavoritesCubit>().updateFavorites(data);
+      },
     );
   }
 }

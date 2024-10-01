@@ -50,5 +50,6 @@
     "height": "altezza",
     "weight": "peso",
     "stats": "statistiche",
-    "curiosities": "curiosità"
+    "curiosities": "curiosità",
+    "noFavoritesFound": "Nessun preferito trovato. Aggiungili dalla home tramite l'icona stella."
 }

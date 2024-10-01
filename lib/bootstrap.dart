@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:logging/logging.dart';
+import 'package:pokedex_scaffold/configs/hydrated_bloc.dart';
 import 'package:pokedex_scaffold/configs/logger.dart';
 import 'package:pokedex_scaffold/configs/responsiveness_utils.dart';
 import 'package:pokedex_scaffold/configs/singleton_locator.dart';
@@ -41,6 +42,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
       if (!kIsWeb) {
         await configureResponsivenessUtils();
       }
+      configureHydratedBloc();
       setupLocator();
       configureWeb();
       configureLogger();

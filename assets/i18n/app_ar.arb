@@ -20,5 +20,6 @@
     "height": "height",
     "weight": "weight",
     "stats": "statistics",
-    "curiosities": "curiosities"
+    "curiosities": "curiosities",
+    "noFavoritesFound": "No favorites found. Add them on the home list by the star icon."
 }
