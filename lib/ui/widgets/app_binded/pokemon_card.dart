@@ -11,12 +11,14 @@ import 'package:pokedex_scaffold/utils/ui_utils.dart';
 
 class PokemonCard extends StatelessWidget {
   final PokemonDTO data;
-  final void Function() onPressed;
+  final void Function()? onPressed;
+  final Widget? favoriteButton;
 
   const PokemonCard({
     super.key,
     required this.data,
-    required this.onPressed,
+    this.favoriteButton,
+    this.onPressed,
   });
 
   @override
@@ -35,32 +37,45 @@ class PokemonCard extends StatelessWidget {
                   child: Assets.images.pokeball.image(),
                 ),
               ),
-              PositionedDirectional(
-                bottom: 5.h,
-                end: 5.w,
-                child: SizedBox(
-                  width: 100.w,
-                  child: CachedNetworkImage(
-                    imageUrl: data.thumbnail!,
-                    placeholder: (context, url) => Center(
-                      child: SizedBox(
-                        width: 20.w,
-                        height: 20.w,
-                        child: PokedexScaffoldCircularProgressIndicator(),
+              if (data.thumbnail != null)
+                PositionedDirectional(
+                  bottom: 5.h,
+                  end: 5.w,
+                  child: SizedBox(
+                    width: 100.w,
+                    child: CachedNetworkImage(
+                      imageUrl: data.thumbnail!,
+                      placeholder: (context, url) => Center(
+                        child: SizedBox(
+                          width: 20.w,
+                          height: 20.w,
+                          child: PokedexScaffoldCircularProgressIndicator(),
+                        ),
                       ),
+                      errorWidget: (context, url, error) => Container(),
                     ),
-                    errorWidget: (context, url, error) => Container(),
                   ),
                 ),
-              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 20.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      UiUtils.integerStringWithFixedCharacters(data.id!, 3),
-                      style: AppTheme.s40w600h40cWhite70,
+                    Row(
+                      children: [
+                        Text(
+                          UiUtils.integerStringWithFixedCharacters(data.id!, 3),
+                          style: AppTheme.s40w600h40cWhite70,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.only(start: 10.w),
+                          child: favoriteButton ??
+                              SizedBox(
+                                width: 46.w,
+                                height: 46.w,
+                              ),
+                        ),
+                      ],
                     ),
                     Text(
                       data.name!,
