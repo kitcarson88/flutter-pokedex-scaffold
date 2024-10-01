@@ -87,6 +87,12 @@ class AppTheme {
         color: Colors.white,
       );
 
+  static TextStyle s16w600h20l120507dWhite(BuildContext context) =>
+      defaultFontTextStyle(context).copyWith(
+        fontWeight: FontWeight.w600,
+        height: 1.25,
+      );
+
   static TextStyle s16w600h20cWhite(BuildContext context) => defaultFontTextStyle(context).copyWith(
         fontWeight: FontWeight.w600,
         height: 1.25,

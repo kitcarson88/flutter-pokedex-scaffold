@@ -13,7 +13,7 @@ class MainTabsView extends StatelessWidget {
         routes: [
           HomeRoute(),
           FavoritesRoute(),
-          UseCasesRoutingRoute(),
+          const UseCasesRoutingRoute(),
           SettingsRoute(),
         ],
         builder: (context, child) {
