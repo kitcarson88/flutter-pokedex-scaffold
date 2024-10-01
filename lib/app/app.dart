@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pokedex_scaffold/app/app_builder.dart';
 import 'package:pokedex_scaffold/app/router.dart';
 import 'package:pokedex_scaffold/configs/flavors.dart';
+import 'package:pokedex_scaffold/configs/singleton_locator.dart';
 import 'package:pokedex_scaffold/ui/styles/theme.dart';
 
 class App extends StatelessWidget {
@@ -11,7 +12,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppRouter appRouter = AppRouter();
+    final appRouter = locator<AppRouter>();
 
     return MaterialApp.router(
       title: F.title,
