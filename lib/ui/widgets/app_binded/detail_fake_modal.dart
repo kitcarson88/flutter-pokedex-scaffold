@@ -34,17 +34,18 @@ class DetailFakeModal extends StatelessWidget {
               child: DetailInfos(data),
             ),
           ),
-          Positioned(
-            top: -pokemonImageSize / 2 - cardDisplacement,
-            child: SizedBox(
-              height: pokemonImageSize,
-              child: CachedNetworkImage(
-                imageUrl: data.image,
-                placeholder: (context, url) => Container(),
-                errorWidget: (context, url, error) => Container(),
+          if (data.image != null)
+            Positioned(
+              top: -pokemonImageSize / 2 - cardDisplacement,
+              child: SizedBox(
+                height: pokemonImageSize,
+                child: CachedNetworkImage(
+                  imageUrl: data.image!,
+                  placeholder: (context, url) => Container(),
+                  errorWidget: (context, url, error) => Container(),
+                ),
               ),
             ),
-          ),
         ],
       );
 }

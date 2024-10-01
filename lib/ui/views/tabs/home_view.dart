@@ -11,13 +11,16 @@ import 'package:pokedex_scaffold/configs/singleton_locator.dart';
 import 'package:pokedex_scaffold/constants/untranslated_strings.dart' as strings;
 import 'package:pokedex_scaffold/core/base/base_view.dart';
 import 'package:pokedex_scaffold/core/models/dto/pokemon_dto.dart';
+import 'package:pokedex_scaffold/core/models/enum/pokemon_type.dart';
 import 'package:pokedex_scaffold/ui/styles/theme.dart';
+import 'package:pokedex_scaffold/ui/widgets/app_binded/error_container.dart';
 import 'package:pokedex_scaffold/ui/widgets/app_binded/favorite_button.dart';
 import 'package:pokedex_scaffold/ui/widgets/app_binded/pokemon_card.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_circular_progress_indicator.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_ws_bloc_container.dart';
 import 'package:pokedex_scaffold/utils/extensions/build_context.dart';
 import 'package:pokedex_scaffold/utils/extensions/string.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 @RoutePage()
 class HomeView extends BaseStatelessView {
@@ -33,11 +36,19 @@ class HomeView extends BaseStatelessView {
   @override
   Widget body(BuildContext context) => PokedexScaffoldWsBlocContainer<HomeCubit, HomeState>(
         prioritiseDataWhenAvailable: true,
-        errorMessage:
-            context.localization.serviceError(context.localization.pokemon, strings.italianDei),
-        errorRetryCallback: () {
-          locator<HomeCubit>().loadPokemons(language: context.locale.languageCode);
-        },
+        loadingChild: _LoadingContainer(),
+        // errorMessage:
+        //     context.localization.serviceError(context.localization.pokemon, strings.italianDei),
+        // errorRetryCallback: () {
+        //   locator<HomeCubit>().loadPokemons(language: context.locale.languageCode);
+        // },
+        errorChildBuilder: (context, error) => ErrorContainer(
+          message:
+              context.localization.serviceError(context.localization.pokemon, strings.italianDei),
+          retryCallback: () {
+            locator<HomeCubit>().loadPokemons(language: context.locale.languageCode);
+          },
+        ),
         noListDataFoundMessage: context.localization.noDataFound(
             context.localization.pokemon, 'male', context.localization.no('other').capitalize()),
         dataRefreshCallback: () async {
@@ -51,6 +62,45 @@ class HomeView extends BaseStatelessView {
         initialLoadCallback: () {
           locator<HomeCubit>().loadPokemons(language: context.locale.languageCode);
         },
+      );
+}
+
+class _LoadingContainer extends StatelessWidget {
+  static final _kSkeletonData = [
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.grass),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.grass),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.grass),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.fire),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.fire),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.fire),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.water),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.water),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.water),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.bug),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.bug),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.bug),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.bug),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.bug),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.bug),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.normal),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.normal),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.normal),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.normal),
+    PokemonDTO(name: BoneMock.name, mainType: PokemonType.normal),
+  ];
+
+  @override
+  Widget build(BuildContext context) => Skeletonizer(
+        ignorePointers: false,
+        child: ListView.builder(
+          padding: EdgeInsets.only(bottom: AppTheme.bottomSafeAreaHeight(context)),
+          itemCount: _kSkeletonData.length,
+          itemBuilder: (context, index) => Padding(
+            padding: AppTheme.sidePadding,
+            child: PokemonCard(
+                data: _kSkeletonData.map((item) => item.copyWith(id: index + 1)).toList()[index]),
+          ),
+        ),
       );
 }
 

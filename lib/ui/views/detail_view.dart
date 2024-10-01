@@ -9,19 +9,20 @@ import 'package:pokedex_scaffold/constants/untranslated_strings.dart' as strings
 import 'package:pokedex_scaffold/core/base/base_view.dart';
 import 'package:pokedex_scaffold/core/models/dto/pokemon_dto.dart';
 import 'package:pokedex_scaffold/core/models/form/pokemon_detail.dart';
+import 'package:pokedex_scaffold/core/models/form/stat.dart';
 import 'package:pokedex_scaffold/core/repositories/generic_repository.dart';
 import 'package:pokedex_scaffold/core/repositories/pokemon_repository.dart';
 import 'package:pokedex_scaffold/ui/styles/theme.dart';
 import 'package:pokedex_scaffold/ui/widgets/app_binded/detail_background.dart';
 import 'package:pokedex_scaffold/ui/widgets/app_binded/detail_fake_modal.dart';
 import 'package:pokedex_scaffold/ui/widgets/app_binded/favorite_button.dart';
-import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_circular_progress_indicator.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_fake_modal.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_ws_bloc_container.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_ws_error.dart';
 import 'package:pokedex_scaffold/utils/extensions/build_context.dart';
 import 'package:pokedex_scaffold/utils/no_effects_scroll_behavior.dart';
 import 'package:pokedex_scaffold/utils/ui_utils.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 @RoutePage()
 class DetailView extends BaseStatelessView implements AutoRouteWrapper {
@@ -85,8 +86,11 @@ class DetailView extends BaseStatelessView implements AutoRouteWrapper {
                 ),
                 PokedexScaffoldWsBlocContainer<DetailCubit, DetailState>(
                   loadingChild: _DetailDataLoadingContainer(
+                    data.id!,
                     screenHeight: screenHeight,
+                    topPadding: topPadding,
                     cardDisplacement: _kCardDisplacement,
+                    pokemonImageSize: _kPokemonImageSize,
                   ),
                   errorChildBuilder: (context, error) => _DetailDataErrorContainer(
                     data.id!,
@@ -130,22 +134,53 @@ class DetailView extends BaseStatelessView implements AutoRouteWrapper {
 }
 
 class _DetailDataLoadingContainer extends StatelessWidget {
+  static final _kSkeletonData = PokemonDetail(
+    name: BoneMock.name,
+    description: BoneMock.chars(6),
+    weight: 0,
+    height: 0,
+    behaviors: [
+      BoneMock.longParagraph,
+      BoneMock.longParagraph,
+      BoneMock.longParagraph,
+    ],
+    stats: [
+      Stat(
+        name: BoneMock.chars(6),
+        value: 0,
+      ),
+      Stat(
+        name: BoneMock.chars(6),
+        value: 0,
+      ),
+      Stat(
+        name: BoneMock.chars(6),
+        value: 0,
+      )
+    ],
+  );
+
+  final int id;
+  final double topPadding;
   final double screenHeight;
   final double cardDisplacement;
+  final double pokemonImageSize;
 
-  const _DetailDataLoadingContainer({
+  const _DetailDataLoadingContainer(
+    this.id, {
     required this.screenHeight,
+    required this.topPadding,
     required this.cardDisplacement,
+    required this.pokemonImageSize,
   });
 
   @override
-  Widget build(BuildContext context) => PokedexScaffoldFakeModal(
-        minHeight: screenHeight / 2 - cardDisplacement,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            PokedexScaffoldCircularProgressIndicator(),
-          ],
+  Widget build(BuildContext context) => Skeletonizer(
+        child: DetailFakeModal(
+          data: _kSkeletonData,
+          screenHeight: screenHeight,
+          cardDisplacement: cardDisplacement,
+          pokemonImageSize: pokemonImageSize,
         ),
       );
 }

@@ -9,7 +9,7 @@ class PokemonDetail {
   final int? id;
   final String? name;
   final String? description;
-  final String image;
+  final String? image;
   final List<PokemonTypeData>? types;
   final int? height;
   final int? weight;
@@ -20,7 +20,7 @@ class PokemonDetail {
     this.id,
     this.name,
     this.description,
-    required this.image,
+    this.image,
     this.types,
     this.height,
     this.weight,

@@ -17,6 +17,7 @@ import 'package:pokedex_scaffold/ui/modals/with_indicator_modal.dart';
 import 'package:pokedex_scaffold/ui/styles/theme.dart';
 import 'package:pokedex_scaffold/ui/views/placeholder_example_view.dart';
 import 'package:pokedex_scaffold/ui/views/placeholder_example_with_vavigation_view.dart';
+import 'package:pokedex_scaffold/ui/widgets/app_binded/error_container.dart';
 import 'package:pokedex_scaffold/ui/widgets/app_binded/use_case_button.dart';
 import 'package:pokedex_scaffold/ui/widgets/app_binded/use_case_dates_container.dart';
 import 'package:pokedex_scaffold/ui/widgets/app_binded/use_cases_section.dart';
@@ -28,6 +29,7 @@ import 'package:pokedex_scaffold/utils/extensions/string.dart';
 import 'package:pokedex_scaffold/utils/extensions/timezoned_datetime.dart';
 import 'package:pokedex_scaffold/utils/no_effects_scroll_behavior.dart';
 import 'package:pokedex_scaffold/utils/typedefs/timezoned_datetime.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 @RoutePage()
 class UseCasesView extends BaseStatelessView {
@@ -42,11 +44,14 @@ class UseCasesView extends BaseStatelessView {
 
   @override
   Widget body(BuildContext context) => PokedexScaffoldWsBlocContainer<UseCasesCubit, UseCasesState>(
-        errorMessage: context.localization
-            .serviceError(context.localization.useCase(100), strings.italianDei),
-        errorRetryCallback: () {
-          locator<UseCasesCubit>().getUseCasesData(language: context.locale.languageCode);
-        },
+        loadingChild: const _UseCasesLoading(),
+        errorChildBuilder: (context, error) => ErrorContainer(
+          message: context.localization
+              .serviceError(context.localization.useCase(100), strings.italianDei),
+          retryCallback: () {
+            locator<UseCasesCubit>().getUseCasesData(language: context.locale.languageCode);
+          },
+        ),
         dataChildBuilder: (data, [_]) => _UseCasesDataFetched(
           data: data.$1,
           nativelyParsedDates: data.$2,
@@ -55,6 +60,43 @@ class UseCasesView extends BaseStatelessView {
         initialLoadCallback: () {
           locator<UseCasesCubit>().getUseCasesData(language: context.locale.languageCode);
         },
+      );
+}
+
+class _UseCasesLoading extends StatelessWidget {
+  static final _kMockSwitchesData = [
+    Switch(id: 0, value: BoneMock.name, enabled: false),
+    Switch(id: 1, value: BoneMock.name, enabled: false),
+    Switch(id: 2, value: BoneMock.name, enabled: false),
+    Switch(id: 3, value: BoneMock.name, enabled: false),
+  ];
+
+  static final _kMockedNativelyParsedDates = [
+    DateTime.now(),
+    DateTime.now(),
+    DateTime.now(),
+    DateTime.now(),
+    DateTime.now(),
+  ];
+
+  static final _kMockedCustomParsedDates = [
+    (DateTime.now(), const Duration(seconds: 1)),
+    (DateTime.now(), const Duration(seconds: 1)),
+    (DateTime.now(), const Duration(seconds: 1)),
+    (DateTime.now(), const Duration(seconds: 1)),
+    (DateTime.now(), const Duration(seconds: 1)),
+  ];
+
+  const _UseCasesLoading();
+
+  @override
+  Widget build(BuildContext context) => Skeletonizer(
+        ignorePointers: false,
+        child: _UseCasesDataFetched(
+          data: _kMockSwitchesData,
+          nativelyParsedDates: _kMockedNativelyParsedDates,
+          customParsedDates: _kMockedCustomParsedDates,
+        ),
       );
 }
 

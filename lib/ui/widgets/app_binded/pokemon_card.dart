@@ -8,6 +8,7 @@ import 'package:pokedex_scaffold/ui/widgets/app_binded/pokemon_type_icon.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_card.dart';
 import 'package:pokedex_scaffold/ui/widgets/custom/pokedex_scaffold_circular_progress_indicator.dart';
 import 'package:pokedex_scaffold/utils/ui_utils.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class PokemonCard extends StatelessWidget {
   final PokemonDTO data;
@@ -32,9 +33,11 @@ class PokemonCard extends StatelessWidget {
               PositionedDirectional(
                 bottom: -20.w,
                 end: -20.h,
-                child: SizedBox(
-                  width: 100.w,
-                  child: Assets.images.pokeball.image(),
+                child: Skeleton.ignore(
+                  child: SizedBox(
+                    width: 100.w,
+                    child: Assets.images.pokeball.image(),
+                  ),
                 ),
               ),
               if (data.thumbnail != null)
@@ -63,9 +66,11 @@ class PokemonCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Text(
-                          UiUtils.integerStringWithFixedCharacters(data.id!, 3),
-                          style: AppTheme.s40w600h40cWhite70,
+                        Skeleton.keep(
+                          child: Text(
+                            UiUtils.integerStringWithFixedCharacters(data.id!, 3),
+                            style: AppTheme.s40w600h40cWhite70,
+                          ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.only(start: 10.w),
