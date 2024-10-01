@@ -77,5 +77,15 @@
     "datesExampleTitle": "Esempio di parse di date",
     "datesExampleDescription": "In flutter le date vengono automaticamente ricevute e convertite nella timezone UTC (con offset 0, riferita al meridiano fondamentale di Greenwich). E' possibile convertirle alla timezone locale del dispositivo in uso, ma non è possibile impostare (ed eventualmente convertirle nuovamente in una isostring) con uno specifico offset di timezone. Di seguito vengono stampate 3 date relative allo stesso momento nel tempo (ma in 3 timezone differenti, relative ad esempio a 3 posti differenti con diverso fuso orario) recuperate dallo stesso servizio. Le tre date verranno prima interpretate e stampate con il tipo DateTime nativo, dopodichè verranno stampate con un tipo custom (realizzato ontop del DateTime nativo) che ne preserva la timezone.",
     "nativeParsedDates": "Date interpretate nativamente",
-    "customParsedDates": "Date interpretate con parser custom"
+    "customParsedDates": "Date interpretate con parser custom",
+    "it": "italiano",
+    "en": "inglese",
+    "es": "spagnolo",
+    "ar": "arabo",
+    "light": "chiaro",
+    "dark": "scuro",
+    "systemLanguage": "lingua di sistema",
+    "systemTheme": "tema di sistema",
+    "language": "lingua",
+    "theme": "tema"
 }

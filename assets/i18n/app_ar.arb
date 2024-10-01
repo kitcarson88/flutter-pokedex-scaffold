@@ -47,5 +47,15 @@
     "datesExampleTitle": "Dates parse example",
     "datesExampleDescription": "In flutter, dates are automatically received and converted to the UTC timezone (with offset 0, referring to the Greenwich prime meridian). It is possible to convert them to the local timezone of the device in use, but it is not possible to set (and possibly convert them back to an isostring) with a specific timezone offset. In the following, 3 dates relating to the same moment in time are printed out (but in 3 different timezones, e.g. relating to 3 different places with different time zones) retrieved from the same service. The three dates will first be interpreted and printed with the native DateTime type, after which they will be printed with a custom type (realised ontop of the native DateTime) that preserves their timezone.",
     "nativeParsedDates": "Natively interpreted dates",
-    "customParsedDates": "Dates interpreted with custom parsers"
+    "customParsedDates": "Dates interpreted with custom parsers",
+    "it": "italian",
+    "en": "english",
+    "es": "spanish",
+    "ar": "arabic",
+    "light": "light",
+    "dark": "dark",
+    "systemLanguage": "system language",
+    "systemTheme": "system theme",
+    "language": "language",
+    "theme": "theme"
 }

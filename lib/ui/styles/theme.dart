@@ -60,6 +60,9 @@ class AppTheme {
   static Color lWhitedAndroidDark(BuildContext context) =>
       context.isDarkMode() ? AppColors.androidDark : Colors.white;
 
+  static Color l979797d808080(BuildContext context) =>
+      context.isDarkMode() ? AppColors.c808080 : AppColors.c979797;
+
   static Color l53E053d3EB33E(BuildContext context) =>
       context.isDarkMode() ? AppColors.c3EB33E : AppColors.c53E053;
 
@@ -82,6 +85,18 @@ class AppTheme {
         height: 1.25,
       );
 
+  static TextStyle s16w400h16lPrimarydWhite(BuildContext context) =>
+      defaultFontTextStyle(context).copyWith(
+        height: 1,
+        color: AppTheme.lPrimarydF5F6F7(context),
+      );
+
+  static TextStyle s16w400h16l979797d808080(BuildContext context) =>
+      defaultFontTextStyle(context).copyWith(
+        height: 1,
+        color: AppTheme.l979797d808080(context),
+      );
+
   static TextStyle s16w400h20cWhite(BuildContext context) => defaultFontTextStyle(context).copyWith(
         height: 1.25,
         color: Colors.white,
@@ -97,6 +112,13 @@ class AppTheme {
         fontWeight: FontWeight.w600,
         height: 1.25,
         color: Colors.white,
+      );
+
+  static TextStyle s16w600h24lPrimarydWhite(BuildContext context) =>
+      defaultFontTextStyle(context).copyWith(
+        height: 1.5,
+        fontWeight: FontWeight.w600,
+        color: AppTheme.lPrimarydF5F6F7(context),
       );
 
   static TextStyle s18w400h20l120507dWhite(BuildContext context) =>
@@ -142,6 +164,28 @@ class AppTheme {
     fontWeight: FontWeight.w600,
     height: 2.5,
     color: AppColors.iosDark,
+    decoration: TextDecoration.none,
+    wordSpacing: 0.1,
+    letterSpacing: 0.1,
+  );
+
+  static final s16w400h16cPrimary = TextStyle(
+    fontFamily: _kDefaultFontFamily,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    height: 1,
+    color: AppColors.primary,
+    decoration: TextDecoration.none,
+    wordSpacing: 0.1,
+    letterSpacing: 0.1,
+  );
+
+  static final s16w400h16cWhite = TextStyle(
+    fontFamily: _kDefaultFontFamily,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    height: 1,
+    color: Colors.white,
     decoration: TextDecoration.none,
     wordSpacing: 0.1,
     letterSpacing: 0.1,
