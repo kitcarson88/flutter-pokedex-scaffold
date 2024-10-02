@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "dart-code.dart-code",
+    "dart-code.flutter",
+    "alexisvt.flutter-snippets",
+    "localizely.flutter-intl",
+    "aksharpatel47.vscode-flutter-helper",
+    "mhutchie.git-graph",
+    "marcelovelasquez.flutter-tree",
+    "vscjava.vscode-gradle",
+    "mathiasfrohlich.kotlin",
+    "kasik96.swift",
+    "duck-dev-go.dart-data-class-generator-duck-dev-go",
+    "gmlewis-vscode.flutter-stylizer",
+    "felixangelov.bloc",
+  ]
+}

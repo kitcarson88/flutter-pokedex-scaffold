@@ -1,0 +1,3 @@
+void configureWeb() {
+  // No-op.
+}

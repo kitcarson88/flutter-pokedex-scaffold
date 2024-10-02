@@ -1,0 +1,91 @@
+{
+    "connectionError": "Si è verificato un problema di rete. Controllare la connessione del dispositivo e riprovare",
+    "serviceError": "Si è verificato un errore nel recupero delle informazioni {article} {dataName}",
+    "@serviceError": {
+        "placeholders": {
+            "article": {
+                "type": "String"
+            },
+            "dataName": {
+                "type": "String"
+            }
+        }
+    },
+    "sessionError": "Si è verificato un errore di sessione. Si prega di effettuare nuovamente l'accesso",
+    "genericError": "Si è verificato un errore",
+    "pleaseRetryError": "Si è verificato un errore. Si prega di riprovare",
+    "noDataFound": "{gender, select, male{{no} {dataName} trovato} female{{no} {dataName} trovata} other{{no} {dataName} trovato}}",
+    "@noDataFound": {
+        "placeholders": {
+            "gender": {
+                "type": "String"
+            },
+            "no": {
+                "type": "String"
+            },
+            "dataName": {
+                "type": "String"
+            }
+        }
+    },
+    "no": "{gender, select, male{nessuno} female{nessuna} other{nessun}}",
+    "@no": {
+        "placeholders": {
+            "gender": {
+                "type": "String"
+            }
+        }
+    },
+    "retry": "riprova",
+    "youAreOffline": "al momento sei offline",
+    "youAreOnlineAgain": "sei di nuovo online",
+    "dismiss": "chiudi",
+    "home": "home",
+    "favorites": "preferiti",
+    "useCases": "esempi",
+    "settings": "impostazioni",
+    "pokemon": "pokemon",
+    "pokedex": "pokedex",
+    "pokemonDetail": "dettaglio pokemon",
+    "height": "altezza",
+    "weight": "peso",
+    "stats": "statistiche",
+    "curiosities": "curiosità",
+    "noFavoritesFound": "Nessun preferito trovato. Aggiungili dalla home tramite l'icona stella.",
+    "useCase": "{count, plural, =0{casi d'uso} =1{caso d'uso} other{casi d'uso}}",
+    "mutableDataExample": "Esempio di dati mutabili",
+    "mutableDataExampleDescription": "Di seguito viene proposto un esempio avanzato di recupero di informazioni da servizio rest per la visualizzazione di switch in pagina con architettura bloc. A differenza di quanto viene eseguito sulla pagina di esempio, i dati vengono convertiti e riversati in un companion bloc in cui è possibile attuare modifiche di stato ai dati ricevuti. Questo permette di continuare ad utilizzare un bloc che eredita dal base ws bloc, ma non potendolo estendere (i bloc sviluppati mediante il pacchetto freezed non permettono di essere estesi) gliene si affianca un altro per la manipolazione di dati",
+    "routingExample": "Esempi di navigazione",
+    "routingExampleDescription": "Di seguito vengono proposti alcuni esempi di navigazione a pagine figlie",
+    "rootNavigation": "Navigazione con router principale",
+    "nestedNavigation": "Navigazione con router annidato",
+    "modalExample": "Esempio di creazione modal",
+    "modalExampleDescription": "Di seguito vengono proposti alcuni esempi di creazione modal. Il primo adattabile in altezza al suo contenuto; il secondo ad altezza fissa, ma che integra una navigazione annidata tra view al suo interno",
+    "modalNavigation": "Modal semplice",
+    "modalNavigationNestedNavigator": "Modal navigabile",
+    "modalNestedNavigation": "Navigazione dentro il modal",
+    "toastExample": "Esempio di visualizzazione toast",
+    "toastExampleDescription": "Di seguito viene proposto un exempio di visualizzazione di un toast",
+    "showToast": "Apri toast",
+    "exampleMessage": "Questo è un messaggio di esempio",
+    "dialogExample": "Esempio di visualizzazione di un dialog",
+    "dialogExampleDescription": "Di seguito viene proposto un esempio di visualizzazione di un dialog",
+    "showDialog": "Apri dialog",
+    "dialogTitle": "Dialog di esempio",
+    "dialogDescription": "Descrizione dialog di esempio",
+    "dialogButtonClose": "chiudi",
+    "datesExampleTitle": "Esempio di parse di date",
+    "datesExampleDescription": "In flutter le date vengono automaticamente ricevute e convertite nella timezone UTC (con offset 0, riferita al meridiano fondamentale di Greenwich). E' possibile convertirle alla timezone locale del dispositivo in uso, ma non è possibile impostare (ed eventualmente convertirle nuovamente in una isostring) con uno specifico offset di timezone. Di seguito vengono stampate 3 date relative allo stesso momento nel tempo (ma in 3 timezone differenti, relative ad esempio a 3 posti differenti con diverso fuso orario) recuperate dallo stesso servizio. Le tre date verranno prima interpretate e stampate con il tipo DateTime nativo, dopodichè verranno stampate con un tipo custom (realizzato ontop del DateTime nativo) che ne preserva la timezone.",
+    "nativeParsedDates": "Date interpretate nativamente",
+    "customParsedDates": "Date interpretate con parser custom",
+    "it": "italiano",
+    "en": "inglese",
+    "es": "spagnolo",
+    "ar": "arabo",
+    "light": "chiaro",
+    "dark": "scuro",
+    "systemLanguage": "lingua di sistema",
+    "systemTheme": "tema di sistema",
+    "language": "lingua",
+    "theme": "tema"
+}

@@ -1,0 +1,267 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // flutter run
+            "name": "Default (no flavors)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart"
+        },
+        {
+            // flutter run --debug --flavor dev --dart-define FLAVOR=dev
+            "name": "Development Debug",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--debug",
+                "--flavor",
+                "dev",
+                "--dart-define",
+                "FLAVOR=dev"
+            ]
+        },
+        {
+            // flutter run --debug --flavor devh --dart-define FLAVOR=dev
+            "name": "Development Debug HMS",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--debug",
+                "--flavor",
+                "devh",
+                "--dart-define",
+                "FLAVOR=dev"
+            ]
+        },
+        {
+            // flutter run --debug --flavor qa --dart-define FLAVOR=qa
+            "name": "Test Debug",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--debug",
+                "--flavor",
+                "qa",
+                "--dart-define",
+                "FLAVOR=qa"
+            ]
+        },
+        {
+            // flutter run --debug --flavor qah --dart-define FLAVOR=qa
+            "name": "Test Debug HMS",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--debug",
+                "--flavor",
+                "qah",
+                "--dart-define",
+                "FLAVOR=qa"
+            ]
+        },
+        {
+            // flutter run --debug --flavor prod --dart-define FLAVOR=prod
+            "name": "Production Debug",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--debug",
+                "--flavor",
+                "prod",
+                "--dart-define",
+                "FLAVOR=prod"
+            ]
+        },
+        {
+            // flutter run --debug --flavor prodh --dart-define FLAVOR=prod
+            "name": "Production Debug HMS",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--debug",
+                "--flavor",
+                "prodh",
+                "--dart-define",
+                "FLAVOR=prod"
+            ]
+        },
+        {
+            // flutter run --profile --flavor dev --dart-define FLAVOR=dev
+            "name": "Development Profile",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--profile",
+                "--flavor",
+                "dev",
+                "--dart-define",
+                "FLAVOR=dev"
+            ]
+        },
+        {
+            // flutter run --profile --flavor devh --dart-define FLAVOR=dev
+            "name": "Development Profile HMS",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--profile",
+                "--flavor",
+                "devh",
+                "--dart-define",
+                "FLAVOR=dev"
+            ]
+        },
+        {
+            // flutter run --profile --flavor qa --dart-define FLAVOR=qa
+            "name": "Test Profile",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--profile",
+                "--flavor",
+                "qa",
+                "--dart-define",
+                "FLAVOR=qa"
+            ]
+        },
+        {
+            // flutter run --profile --flavor qah --dart-define FLAVOR=qa
+            "name": "Test Profile HMS",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--profile",
+                "--flavor",
+                "qah",
+                "--dart-define",
+                "FLAVOR=qa"
+            ]
+        },
+        {
+            // flutter run --profile --flavor prod --dart-define FLAVOR=prod
+            "name": "Production Profile",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--profile",
+                "--flavor",
+                "prod",
+                "--dart-define",
+                "FLAVOR=prod"
+            ]
+        },
+        {
+            // flutter run --profile --flavor prodh --dart-define FLAVOR=prod
+            "name": "Production Profile HMS",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--profile",
+                "--flavor",
+                "prodh",
+                "--dart-define",
+                "FLAVOR=prod"
+            ]
+        },
+        {
+            // flutter run --release --flavor dev --dart-define FLAVOR=dev
+            "name": "Development Release",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--release",
+                "--flavor",
+                "dev",
+                "--dart-define",
+                "FLAVOR=dev"
+            ]
+        },
+        {
+            // flutter run --release --flavor devh --dart-define FLAVOR=dev
+            "name": "Development Release HMS",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--release",
+                "--flavor",
+                "devh",
+                "--dart-define",
+                "FLAVOR=dev"
+            ]
+        },
+        {
+            // flutter run --release --flavor qa --dart-define FLAVOR=qa
+            "name": "Test Release",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--release",
+                "--flavor",
+                "qa",
+                "--dart-define",
+                "FLAVOR=qa"
+            ]
+        },
+        {
+            // flutter run --release --flavor qah --dart-define FLAVOR=qa
+            "name": "Test Release HMS",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--release",
+                "--flavor",
+                "qah",
+                "--dart-define",
+                "FLAVOR=qa"
+            ]
+        },
+        {
+            // flutter run --release --flavor prod --dart-define FLAVOR=prod
+            "name": "Production Release",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--release",
+                "--flavor",
+                "prod",
+                "--dart-define",
+                "FLAVOR=prod"
+            ]
+        },
+        {
+            // flutter run --release --flavor prodh --dart-define FLAVOR=prod
+            "name": "Production Release HMS",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--release",
+                "--flavor",
+                "prodh",
+                "--dart-define",
+                "FLAVOR=prod"
+            ]
+        }
+    ]
+}

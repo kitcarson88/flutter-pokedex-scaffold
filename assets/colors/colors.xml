@@ -1,0 +1,107 @@
+<resources>
+    <color name="primary">#3465AF</color>
+    <color name="secondary">#FF1C1C</color>
+    <color name="tertiary">#FFCB03</color>
+
+    <color name="darkPrimary">#13518E</color>
+    <color name="darkSecondary">#B02E2E</color>
+
+    <color name="androidDark">#303030</color>
+    <color name="iosDark">#07090D</color>
+
+    <color name="c53E053">#53E053</color>
+    <color name="c3EB33E">#3EB33E</color>
+
+    <color name="splashPrimary">#FF1C1C</color>
+    <color name="splashSecondary">#3465AF</color>
+
+    <color name="splashDarkPrimary">#B02E2E</color>
+    <color name="splashDarkSecondary">#13518E</color>
+
+    <color name="bug">#92BC2C</color>
+    <color name="dark">#595761</color>
+    <color name="dragon">#0C69C8</color>
+    <color name="electric">#F2D94E</color>
+    <color name="fairy">#EE90E6</color>
+    <color name="fighting">#D3425F</color>
+    <color name="fire">#FBA54C</color>
+    <color name="flying">#A1BBEC</color>
+    <color name="ghost">#5F6DBC</color>
+    <color name="grass">#5FBD58</color>
+    <color name="ground">#DA7C4D</color>
+    <color name="ice">#75D0C1</color>
+    <color name="normal">#A0A29F</color>
+    <color name="poison">#B763CF</color>
+    <color name="psychic">#FA8581</color>
+    <color name="rock">#C9BB8A</color>
+    <color name="steel">#5695A3</color>
+    <color name="water">#539DDF</color>
+
+    <color name="softBug">#D4E5AD</color>
+    <color name="softDark">#BEBDC1</color>
+    <color name="softDragon">#A0C5EA</color>
+    <color name="softElectric">#FAF0BA</color>
+    <color name="softFairy">#F8D4F5</color>
+    <color name="softFighting">#EEB5C1</color>
+    <color name="softFire">#FDDCB9</color>
+    <color name="softFlying">#DAE4F8</color>
+    <color name="softGhost">#C1C6E5</color>
+    <color name="softGrass">#C1E5BE</color>
+    <color name="softGround">#F1CCBA</color>
+    <color name="softIce">#C9EDE7</color>
+    <color name="softNormal">#DADBDA</color>
+    <color name="softPoison">#E3C2EC</color>
+    <color name="softPsychic">#FDCFCE</color>
+    <color name="softRock">#EAE4D1</color>
+    <color name="softSteel">#BDD6DB</color>
+    <color name="softWater">#BCD9F3</color>
+
+    <color name="c000F14">#000F14</color>
+    <color name="c001A33">#001A33</color>
+    <color name="c061835">#061835</color>
+    <color name="c120507">#120507</color>
+    <color name="c18191A">#18191A</color>
+    <color name="c1A1C24">#1A1C24</color>
+    <color name="c1A1A1A">#1A1A1A</color>
+    <color name="c1C1C1C">#1C1C1C</color>
+    <color name="c1F2933">#1F2933</color>
+    <color name="c200E32">#200E32</color>
+    <color name="c26394D">#26394D</color>
+    <color name="c2E465E">#2E465E</color>
+    <color name="c424242">#424242</color>
+    <color name="c455B71">#455B71</color>
+    <color name="c454850">#454850</color>
+    <color name="c5C6F82">#5C6F82</color>
+    <color name="c748494">#748494</color>
+    <color name="c7A7A7A">#7A7A7A</color>
+    <color name="c808080">#808080</color>
+    <color name="c8C8C8C">#8C8C8C</color>
+    <color name="c909090">#909090</color>
+    <color name="c979797">#979797</color>
+    <color name="c999999">#999999</color>
+    <color name="cA2ADB8">#A2ADB8</color>
+    <color name="cB0C0CE">#B0C0CE</color>
+    <color name="cB5B5B5">#B5B5B5</color>
+    <color name="cB9C1C9">#B9C1C9</color>
+    <color name="cC1C1C1">#C1C1C1</color>
+    <color name="cC4C4C4">#C4C4C4</color>
+    <color name="cCACACA">#CACACA</color>
+    <color name="cCBD2E3">#CBD2E3</color>
+    <color name="cCCCCCC">#CCCCCC</color>
+    <color name="cD1D6DB">#D1D6DB</color>
+    <color name="cD8D8D8">#D8D8D8</color>
+    <color name="cDADADA">#DADADA</color>
+    <color name="cE5E5E5">#E5E5E5</color>
+    <color name="cEFEFEC">#EFEFEC</color>
+    <color name="cF2F5F8">#F2F5F8</color>
+    <color name="cF5F6F7">#F5F6F7</color>
+    <color name="cF6F4ED">#F6F4ED</color>
+    <color name="cF7F9FA">#F7F9FA</color>
+    <color name="cF4F4F4">#F4F4F4</color>
+    <color name="cFCFDFF">#FCFDFF</color>
+    <color name="c9AABE4">#9AABE4</color>
+    <color name="c6A6A6A">#6A6A6A</color>
+
+    <color name="c44000000">#44000000</color>
+    <color name="c44AAAAAA">#44AAAAAA</color>
+</resources>

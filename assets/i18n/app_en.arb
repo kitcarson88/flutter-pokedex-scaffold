@@ -1,0 +1,87 @@
+{
+    "connectionError": "A network error occurs. Check device connection and retry",
+    "serviceError": "An error has occurred in the retrieval of {dataName} informations",
+    "@serviceError": {
+        "description": "A service error with the name of a data information as parameter",
+        "placeholders": {
+            "dataName": {
+                "type": "String",
+                "example": "example"
+            }
+        }
+    },
+    "sessionError": "A session error has occurred. Please log in again",
+    "genericError": "An error has occured",
+    "pleaseRetryError": "An error has occured. Please retry",
+    "noDataFound": "No {dataName} found",
+    "@noDataFound": {
+        "description": "A no data found error with the name of a data information as parameter",
+        "placeholders": {
+            "dataName": {
+                "type": "String",
+                "example": "example"
+            }
+        }
+    },
+    "no": "no",
+    "retry": "retry",
+    "youAreOffline": "you are currently offline",
+    "youAreOnlineAgain": "you are online again",
+    "dismiss": "dismiss",
+    "home": "home",
+    "favorites": "favorites",
+    "useCases": "use cases",
+    "settings": "settings",
+    "pokemon": "pokemon",
+    "pokedex": "pokedex",
+    "pokemonDetail": "pokemon detail",
+    "height": "height",
+    "weight": "weight",
+    "stats": "statistics",
+    "curiosities": "curiosities",
+    "noFavoritesFound": "No favorites found. Add them on the home list by the star icon.",
+    "useCase": "{count, plural, =0{use cases} =1{use case} other{use cases}}",
+    "@useCase": {
+        "placeholders": {
+            "count": {
+                "type": "num",
+                "format": "compact"
+            }
+        }
+    },
+    "mutableDataExample": "Mutable data example",
+    "mutableDataExampleDescription": "The following is an advanced example of retrieving information from a rest service for displaying switches on a page with a bloc architecture. In contrast to the example page, the data is converted and poured into a companion bloc where it is possible to implement state changes to the received data. This makes it possible to continue to use a bloc that inherits from the basic ws bloc, but as it cannot be extended (blocs developed using the freezed package do not allow them to be extended), another one is added for manipulating data",
+    "routingExample": "Routing examples",
+    "routingExampleDescription": "Below are some examples of child page navigation",
+    "rootNavigation": "Main router navigation",
+    "nestedNavigation": "Nested router navigation",
+    "modalExample": "Modal display example",
+    "modalExampleDescription": "The following are some examples of modal creation. The first can be adapted in height to its content; the second has a fixed height, but integrates nested navigation between views within it",
+    "modalNavigation": "Simple modal",
+    "modalNavigationNestedNavigator": "Navigable modal",
+    "modalNestedNavigation": "Inside modal navigation",
+    "toastExample": "Toast display example",
+    "toastExampleDescription": "The following is the toast display example",
+    "showToast": "Show toast",
+    "exampleMessage": "This is an example message",
+    "dialogExample": "Dialog display example",
+    "dialogExampleDescription": "The following is a dialog display example",
+    "showDialog": "Open dialog",
+    "dialogTitle": "Example dialog",
+    "dialogDescription": "Example dialog description",
+    "dialogButtonClose": "close",
+    "datesExampleTitle": "Dates parse example",
+    "datesExampleDescription": "In flutter, dates are automatically received and converted to the UTC timezone (with offset 0, referring to the Greenwich prime meridian). It is possible to convert them to the local timezone of the device in use, but it is not possible to set (and possibly convert them back to an isostring) with a specific timezone offset. In the following, 3 dates relating to the same moment in time are printed out (but in 3 different timezones, e.g. relating to 3 different places with different time zones) retrieved from the same service. The three dates will first be interpreted and printed with the native DateTime type, after which they will be printed with a custom type (realised ontop of the native DateTime) that preserves their timezone.",
+    "nativeParsedDates": "Natively interpreted dates",
+    "customParsedDates": "Dates interpreted with custom parsers",
+    "it": "italian",
+    "en": "english",
+    "es": "spanish",
+    "ar": "arabic",
+    "light": "light",
+    "dark": "dark",
+    "systemLanguage": "system language",
+    "systemTheme": "system theme",
+    "language": "language",
+    "theme": "theme"
+}
